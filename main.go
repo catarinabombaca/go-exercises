@@ -5,5 +5,5 @@ func main() {
 }
 
 func Add(int1, int2 int) int {
-	return 0
+	return int1 + int2
 }
