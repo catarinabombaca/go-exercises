@@ -4,6 +4,12 @@ func main() {
 
 }
 
-func Add(int1, int2 int) int {
-	return int1 + int2
+func Add(nums ...int) int {
+	result := 0
+
+	for _, num := range nums {
+		result+= num
+	}
+
+	return result
 }
