@@ -6,29 +6,26 @@ import (
 )
 
 func TestAdd(t *testing.T) {
+	var (
+		assert = assert.New(t)
+		testNums = []int{5,4,3,2,-10}
+	)
+
 	t.Run("given 2 integers 4 and 5, when we add them, then return 9 as a result", func(t *testing.T) {
 		expectedValue := 9
-		firstInt := 5
-		secondInt := 4
+		num1 := testNums[1]
+		num2 := testNums[0]
 
-		actualValue := Add(firstInt, secondInt)
+		actualValue := Add(num1, num2)
 
-		assert.Equal(t, expectedValue, actualValue)
+		assert.Equal(expectedValue, actualValue)
 	})
 
 	t.Run("given a variable number of integers, when we add them, then return the total sum as a result", func(t *testing.T) {
-		var (
-			number1 = 5
-			number2 = 4
-			number3 = 3
-			number4 = 2
-			number5 = -10
-			expectedResult = 4
-		)
+		expectedResult := 4
 
-		actualResult := Add(number1, number2, number3, number4, number5)
+		actualResult := Add(testNums...)
 
-		assert.Equal(t, expectedResult, actualResult)
-
+		assert.Equal(expectedResult, actualResult)
 	})
 }
