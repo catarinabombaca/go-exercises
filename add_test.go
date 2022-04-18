@@ -23,7 +23,6 @@ func TestAdd(t *testing.T) {
 
 	t.Run("given a variable number of integers, when we add them, then return the total sum as a result", func(t *testing.T) {
 		expectedResult := 4
-
 		actualResult := Add(testNums...)
 
 		assert.Equal(expectedResult, actualResult)
