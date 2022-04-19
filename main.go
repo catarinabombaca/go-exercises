@@ -2,25 +2,17 @@ package main
 
 import (
 	"add/calculator"
+	"add/helpers"
 	"fmt"
 	"os"
-	"strconv"
 )
 
 func main() {
 	args := os.Args[1:]
-	var numbers []int
-
-	for _, arg := range args {
-		numberFromArg, err := strconv.Atoi(arg)
-		if err != nil {
-			panic(err)
-		}
-		numbers = append(numbers, numberFromArg)
-	}
+	numbers := helpers.ConvertToSliceOfInts(args)
 
 	result := calculator.Add(numbers...)
 
 	fmt.Println("Calculating the sum...")
-	fmt.Println("result: ", result)
+	fmt.Println(result)
 }
